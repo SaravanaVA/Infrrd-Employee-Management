@@ -66,7 +66,10 @@ export class EmployeeService {
      * @memberOf EmployeeService
      */
     public getEmployeeDetails(): Employee[] {
-        return JSON.parse(localStorage.getItem('infrrd-emp-details'));
+        const empDetails = JSON.parse(
+            localStorage.getItem('infrrd-emp-details')
+        );
+        return empDetails ? empDetails : [];
     }
 
     /**
