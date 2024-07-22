@@ -1,0 +1,60 @@
+<div class="header-bar">
+    <h3>{{ employeeList.length }} Results Found</h3>
+
+    <div class="form-control">
+        <label for="name">Search: </label>
+        <input
+            id="name"
+            [(ngModel)]="search"
+            (keyup)="onSearch($event.value)"
+            type="text"
+            class="search"
+            placeholder="Enter email for search"
+        />
+    </div>
+</div>
+<div class="overview-card-container">
+    <div class="card" *ngFor="let emp of employeeList">
+        <div class="card-header">
+            <img
+                class="profile-photo"
+                src="{{ '/assets/avatar/' + emp.avatar + '.jpg' }}"
+                alt="Profile Picture"
+            />
+
+            <p class="edit-info">
+                <i (click)="editEmp(emp.email)" class="fas fa-edit edit-icon">
+                </i>
+                <i
+                    (click)="deleteEmp(emp.email)"
+                    class="fas fa-trash delete-icon"
+                >
+                </i>
+            </p>
+        </div>
+        <h3 class="emp-name">{{ emp.name }}</h3>
+        <p class="emp-desigination">{{ emp.designation }}</p>
+        <div class="rating">
+            <span class="title">3.5 Rating</span>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i
+            ><i class="far fa-star"></i>
+        </div>
+        <p class="info"><span class="title">Experience:</span> 5.8 Years</p>
+        <p class="info"><span class="title">Date of Joining:</span> 2017</p>
+        <p class="info">
+            <span class="title">Current Team:</span> OCBC Singapore
+        </p>
+        <p class="info">
+            <span class="title">Reporting Manager:</span> Lalit Agarwal
+        </p>
+        <div class="contact">
+            <a class="phone" href="{{ 'tel:' + emp.contact }}"
+                ><i class="fas fa-phone"></i> {{ emp.contact }}</a
+            >
+            <a class="email" href="{{ 'mailto:' + emp.email }}"
+                ><i class="fas fa-envelope"></i> {{ emp.email }}</a
+            >
+        </div>
+    </div>
+</div>

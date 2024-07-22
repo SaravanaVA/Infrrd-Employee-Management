@@ -1,0 +1,35 @@
+<div id="left-bar">
+    <h2 class="left-bar-logo">Infrrd</h2>
+    <ul class="left-bar-item-container">
+        <div class="top-menu">
+            <li
+                [routerLink]="'overview'"
+                routerLinkActive="active"
+                class="left-bar-item"
+            >
+                <i class="fas fa-users"></i> Overview
+            </li>
+
+            <li class="left-bar-item non-clickable">
+                <i class="fas fa-search"></i> Search
+            </li>
+            <li class="left-bar-item non-clickable">
+                <i class="fas fa-filter"></i> Filter
+            </li>
+            <li
+                [routerLink]="'employee/create'"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="left-bar-item"
+            >
+                <i class="fas fa-user-plus"></i> Create
+            </li>
+        </div>
+        <div class="bottom-menu">
+            <!-- we can use this for clear the locastorage data -->
+            <li class="left-bar-item non-clickable">
+                <i class="fas fa-sign-out"></i> Sign-out
+            </li>
+        </div>
+    </ul>
+</div>
