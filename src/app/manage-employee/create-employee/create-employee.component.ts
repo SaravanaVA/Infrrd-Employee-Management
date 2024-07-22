@@ -74,7 +74,7 @@ export class CreateEmployeeComponent implements OnInit {
         if (this.employeeForm.valid) {
             // saving the actual info given by user
             this.response = this.empService.saveEmployeeDetails(
-                this.employeeForm.value,
+                this.employeeForm.getRawValue(),
                 this.isEditMode
             );
 
